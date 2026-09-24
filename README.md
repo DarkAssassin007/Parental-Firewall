@@ -1,4 +1,4 @@
-# WiFi Firewall — Hotspot Site Blocker
+# Parental Firewall 🛡
 
 Blocks specific websites for **every device connected to your PC's hotspot** — with a modern desktop dashboard for managing rules, watching live activity, and cutting a device's internet off entirely.
 
