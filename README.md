@@ -1,86 +1,142 @@
-# Parental Firewall 🛡
+# Home Wi‑Fi Parental Firewall
 
-Blocks specific websites for **every device connected to your PC's hotspot** — with a modern desktop dashboard for managing rules, watching live activity, and cutting a device's internet off entirely.
+A Windows-based parental firewall for home networks that helps protect children from adult websites, inappropriate content, ads, trackers, and other harmful online destinations by filtering traffic from devices connected through the home Wi‑Fi hotspot.
 
-## How blocking works
+This project is designed for parents and guardians who want a practical, local layer of protection on the home network. It lets you monitor network activity, block unwanted domains, cut off internet access to specific devices, and protect connected devices from unsafe or inappropriate content while browsing on the family Wi‑Fi.
 
-When you add a site (e.g. `instagram.com`) to **Blocked Sites**, the engine blocks it three ways for hotspot clients:
+## Why this project exists
 
-| Layer | Mechanism | Covers |
-|-------|-----------|--------|
-| DNS sinkhole | Blocked domain queries are answered with `192.168.137.1` (your PC) instead of the real server | All apps that use normal DNS |
-| TLS SNI reset | HTTPS ClientHello packets naming a blocked domain get a TCP RST — connection dies instantly | HTTPS sites, even when DNS resolves another way |
-| HTTP host reset | Plain HTTP requests with a blocked `Host:` header get a TCP RST | Unencrypted traffic |
+The goal is simple: keep kids safer online by filtering the home Wi‑Fi before harmful content reaches their devices.
 
-Rules apply to devices on the hotspot subnet (`192.168.137.0/24` by default — the standard Windows Mobile Hotspot range). Your own PC's traffic is not filtered.
+This project helps block:
 
-### Device-level control
-On the **Devices** page you can also **cut off ALL internet** for one device (Windows Firewall rule, in+out) and restore it later — useful as a hard kill switch per device.
+- Adult websites and explicit content
+- Gambling, scam, and unsafe sites
+- Advertising and tracking domains
+- Harmful or suspicious websites
+- Unwanted keywords and unsafe traffic patterns
+- Devices that should be disconnected from the internet temporarily
+
+It is meant to act as a family safety tool on a home network, especially when devices connect through a Windows hotspot or local Wi‑Fi access point.
+
+## Features
+
+- Block domains such as adult content, gambling, malware, and harmful websites
+- Block ads, trackers, and unwanted traffic sources
+- Filter traffic by keyword patterns
+- Cut off internet access to individual connected devices
+- Live dashboard that shows blocked activity in real time
+- Hotspot-aware filtering for devices connected through the home network
+- Device-level control for instant network shutdown or restore
+- Easy config management through a desktop interface
+
+## How it works
+
+The firewall inspects traffic from devices connected to the hotspot and blocks dangerous or undesired content using several network-layer techniques:
+
+- DNS sinkhole: blocked domains are answered locally instead of resolving to the real site
+- TLS SNI reset: HTTPS requests that mention a blocked domain are terminated before the connection completes
+- HTTP host inspection: blocked hostnames in plain HTTP traffic are cut off
+- Keyword and pattern filtering: suspicious content and unsafe strings can be blocked
+
+This helps stop access to blocked websites and harmful content across the home network before it reaches the user device.
+
+## Project goal
+
+This tool is designed to support a safer online environment for children by giving parents a way to:
+
+- Protect kids from adult sites and explicit content
+- Reduce exposure to aggressive ads and unwanted tracking
+- Block harmful or suspicious websites
+- Manage which devices can access the internet at certain times
+- Maintain visibility into network activity through the dashboard
 
 ## Requirements
 
-- Windows 10/11 with Mobile Hotspot (Settings → Network → Mobile hotspot) **on**
+- Windows 10 or Windows 11
+- Mobile hotspot enabled on the host PC
 - Python 3.8+
-- Npcap — https://npcap.com/ (install with "WinPcap API-compatible Mode")
-- **Run as Administrator** (packet capture + firewall rules need it)
+- Npcap installed: https://npcap.com/ (choose WinPcap API-compatible mode)
+- Run as Administrator
 
-```
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
 ```
 
-## Run it
+## Run the project
 
-Double-click `run_firewall_dashboard.bat` (self-elevates to Administrator), or:
+You can launch it with the provided batch file:
 
+```bash
+run_firewall_dashboard.bat
 ```
+
+Or start it manually:
+
+```bash
 python firewall_dashboard.py
 ```
 
-## Using the dashboard
-
-New sidebar layout with six pages:
-
-| Page | What you do there |
-|------|-------------------|
-| **Dashboard** | Stat cards (blocked sites, keywords, packets blocked, devices), live activity table, and a **Quick Block** box — type a domain, press Enter, done. |
-| **Blocked Sites** | Add/remove the domains every hotspot device is blocked from. Subdomains included automatically (`cdn.instagram.com` is covered by `instagram.com`). |
-| **Keywords** | Words that get unencrypted traffic cut off. |
-| **Devices** | Lists devices connected to the hotspot; cut off / restore internet per device. |
-| **Activity Log** | Live color-coded log with clear/export. |
-| **Settings** | Toggle content filtering, toggle hotspot-only scoping, save. |
-
-Rule changes apply **live** — no restart needed when protection is running.
-
-## Typical session
+## Typical usage
 
 1. Turn on Windows Mobile Hotspot.
-2. Run the dashboard as Administrator → **START PROTECTION**.
-3. Connect your phone to the hotspot.
-4. Type `instagram.com` in Quick Block → on the phone, the site/app now fails to load.
-5. Watch the Dashboard activity table record the blocks.
+2. Connect your home devices to that hotspot.
+3. Launch the dashboard as Administrator.
+4. Start the firewall protection.
+5. Add blocked domains or unsafe keywords.
+6. Monitor live activity and block harmful sites in real time.
+7. Use device-level cut-off controls if a device needs internet access removed immediately.
 
-## Config (`firewall_config.json`)
+## Example blocking behavior
+
+If a child tries to visit a blocked site such as a mature content site or a malicious domain:
+
+- The domain is blocked before it loads
+- The browser or app fails to reach the site
+- The dashboard logs the event and shows the blocked connection
+
+## Dashboard overview
+
+The dashboard includes pages such as:
+
+- Dashboard
+- Blocked Sites
+- Keywords
+- Devices
+- Activity Log
+- Settings
+
+These sections let you manage rules, review blocked activity, and quickly respond to suspicious behavior on the family network.
+
+## Configuration
+
+The project stores settings in `firewall_config.json`.
 
 ```json
 {
     "filter_enabled": true,
     "hotspot_filtering_enabled": true,
     "hotspot_subnet": "192.168.137.0/24",
-    "blocked_domains": ["chatgpt.com"],
+    "blocked_domains": ["example-blocked-site.com"],
     "blocked_ips": [],
     "blocked_keywords": [],
     "allowed_ips": ["127.0.0.1"]
 }
 ```
 
-- `hotspot_filtering_enabled: false` → filter ALL traffic through the PC, not just hotspot devices.
-- `hotspot_subnet` → change if your hotspot uses a different range.
+## Important notes
 
-## Honest limitations
+- Best suited for networks you own or administer.
+- This is a local family protection helper, not a replacement for professional-grade network security systems.
+- HTTPS content cannot always be fully inspected, but the firewall still blocks many dangerous domains and connections using DNS and SNI-level controls.
+- Apps using encrypted DNS may require additional filtering layers, but the dashboard remains useful for monitoring and blocking attempts.
 
-- HTTPS **content** (pages inside a connection) can't be read — blocking works at DNS/SNI level, which is how real network blockers do it.
-- Apps using encrypted DNS (DoH) bypass the DNS sinkhole, but the TLS SNI layer still catches them.
-- QUIC/HTTP3 (UDP 443) isn't intercepted yet; browsers usually fall back to TCP after a failed attempt.
-- Requires the hotspot interface; auto-detected by subnet.
+## Disclaimer
 
-**Disclaimer:** For authorized use on networks you own or administer.
+This project is for authorized, lawful use on networks you own or manage, such as a home family Wi‑Fi network. It is intended to support parental control and home cybersecurity practices, especially for protecting children from adult content, harmful websites, and malicious online exposure.
+
+## License
+
+This project is provided for educational and personal use. Please review the repository license if one is added later.
