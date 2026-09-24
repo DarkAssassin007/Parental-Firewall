@@ -1,0 +1,28 @@
+{
+    "filter_enabled": true,
+    "hotspot_filtering_enabled": true,
+    "hotspot_subnet": "192.168.137.0/24",
+    "blocked_domains": [
+        "malicious-site.com",
+        "phishing-example.com",
+        "dangerous-website.net",
+        "spam-domain.org",
+        "chatgpt.com",
+        "omegale.com"
+    ],
+    "blocked_ips": [],
+    "blocked_keywords": [
+        "malware",
+        "exploit",
+        "hack",
+        "phishing",
+        "trojan",
+        "ransomware",
+        "keylogger",
+        "backdoor",
+        "rootkit"
+    ],
+    "allowed_ips": [
+        "127.0.0.1"
+    ]
+}

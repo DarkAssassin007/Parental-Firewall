@@ -1,0 +1,59 @@
+2025-10-23 16:15:36,759 - INFO - Available interfaces: []
+2025-10-23 16:15:36,759 - ERROR - No network interfaces found
+2025-10-23 16:15:36 - INFO - Firewall started successfully
+2025-10-23 16:19:12,158 - INFO - 
+============================================================
+2025-10-23 16:19:12,158 - INFO - FIREWALL STATISTICS
+2025-10-23 16:19:12,158 - INFO - ============================================================
+2025-10-23 16:19:12,163 - INFO - No packets blocked
+2025-10-23 16:19:12,163 - INFO - ============================================================
+2025-10-23 16:19:12 - INFO - Firewall stopped
+2026-09-23 22:08:42,706 - INFO - Available interfaces: ['\\Device\\NPF_{94B77089-9B34-4B0A-B23D-B6F2BE247C57}', '\\Device\\NPF_{18DB4CDA-D381-4586-A552-9FAC185A08D8}', '\\Device\\NPF_{00E04F33-C1EF-4D3C-811F-EA31296B4C2D}', '\\Device\\NPF_{28540A16-7DEF-4606-9872-48972EE056D5}', '\\Device\\NPF_{6365315A-3CEF-43C1-9FFE-911958030D52}', '\\Device\\NPF_{6D6B175C-042B-454F-AF2D-4CABB74D2523}', '\\Device\\NPF_Loopback', '\\Device\\NPF_{CE9357E4-7DAD-405F-ADC3-6A931B7570F4}']
+2026-09-23 22:08:42,707 - INFO - Starting firewall monitoring on interface: \Device\NPF_{94B77089-9B34-4B0A-B23D-B6F2BE247C57}
+2026-09-23 22:08:42,707 - INFO - Press Ctrl+C to stop
+2026-09-23 22:08:42 - INFO - Firewall started successfully
+2026-09-23 22:09:11,810 - INFO - 
+============================================================
+2026-09-23 22:09:11,811 - INFO - FIREWALL STATISTICS
+2026-09-23 22:09:11,811 - INFO - ============================================================
+2026-09-23 22:09:11,812 - INFO - No packets blocked
+2026-09-23 22:09:11,812 - INFO - ============================================================
+2026-09-23 22:09:11 - INFO - Firewall stopped
+2026-09-23 22:09:19,874 - INFO - Available interfaces: ['\\Device\\NPF_{94B77089-9B34-4B0A-B23D-B6F2BE247C57}', '\\Device\\NPF_{18DB4CDA-D381-4586-A552-9FAC185A08D8}', '\\Device\\NPF_{00E04F33-C1EF-4D3C-811F-EA31296B4C2D}', '\\Device\\NPF_{28540A16-7DEF-4606-9872-48972EE056D5}', '\\Device\\NPF_{6365315A-3CEF-43C1-9FFE-911958030D52}', '\\Device\\NPF_{6D6B175C-042B-454F-AF2D-4CABB74D2523}', '\\Device\\NPF_Loopback', '\\Device\\NPF_{CE9357E4-7DAD-405F-ADC3-6A931B7570F4}']
+2026-09-23 22:09:19,875 - INFO - Starting firewall monitoring on interface: \Device\NPF_{94B77089-9B34-4B0A-B23D-B6F2BE247C57}
+2026-09-23 22:09:19,875 - INFO - Press Ctrl+C to stop
+2026-09-23 22:09:19 - INFO - Firewall started successfully
+2026-09-23 22:09:44,532 - INFO - 
+============================================================
+2026-09-23 22:09:44,533 - INFO - FIREWALL STATISTICS
+2026-09-23 22:09:44,533 - INFO - ============================================================
+2026-09-23 22:09:44,533 - INFO - No packets blocked
+2026-09-23 22:09:44,534 - INFO - ============================================================
+2026-09-23 22:09:44 - INFO - Firewall stopped
+2026-09-24 09:00:41,767 - INFO - Available interfaces: ['\\Device\\NPF_{94B77089-9B34-4B0A-B23D-B6F2BE247C57}', '\\Device\\NPF_{18DB4CDA-D381-4586-A552-9FAC185A08D8}', '\\Device\\NPF_{00E04F33-C1EF-4D3C-811F-EA31296B4C2D}', '\\Device\\NPF_{28540A16-7DEF-4606-9872-48972EE056D5}', '\\Device\\NPF_{6365315A-3CEF-43C1-9FFE-911958030D52}', '\\Device\\NPF_{6D6B175C-042B-454F-AF2D-4CABB74D2523}', '\\Device\\NPF_Loopback', '\\Device\\NPF_{CE9357E4-7DAD-405F-ADC3-6A931B7570F4}']
+2026-09-24 09:00:41,768 - INFO - Starting firewall monitoring on interface: \Device\NPF_{94B77089-9B34-4B0A-B23D-B6F2BE247C57}
+2026-09-24 09:00:41 - INFO - Firewall started successfully
+2026-09-24 09:00:41,769 - INFO - Press Ctrl+C to stop
+2026-09-24 09:13:17,869 - INFO - Available interfaces: ['Local Area Connection* 5', 'Local Area Connection* 4', 'Local Area Connection* 3', 'Local Area Connection* 13', 'Wi-Fi', 'Local Area Connection* 12', 'Loopback Pseudo-Interface 1', 'Ethernet']
+2026-09-24 09:13:17,870 - INFO - Starting firewall monitoring on interface: Local Area Connection* 13
+2026-09-24 09:13:17 - INFO - Firewall started successfully
+2026-09-24 09:13:17,877 - INFO - Press Ctrl+C to stop
+2026-09-24 09:13:18 - ERROR - Firewall error: Could not create Windows Firewall rule for 192.168.137.196: 
+2026-09-24 09:14:17,676 - INFO - Available interfaces: ['Local Area Connection* 5', 'Local Area Connection* 4', 'Local Area Connection* 3', 'Local Area Connection* 13', 'Wi-Fi', 'Local Area Connection* 12', 'Loopback Pseudo-Interface 1', 'Ethernet']
+2026-09-24 09:14:17,676 - INFO - Starting firewall monitoring on interface: Local Area Connection* 13
+2026-09-24 09:14:17 - INFO - Firewall started successfully
+2026-09-24 09:14:17,678 - INFO - Press Ctrl+C to stop
+2026-09-24 09:14:18 - ERROR - Firewall error: Could not create Windows Firewall rule for 192.168.137.196: 
+2026-09-24 09:14:22,637 - INFO - Available interfaces: ['Local Area Connection* 5', 'Local Area Connection* 4', 'Local Area Connection* 3', 'Local Area Connection* 13', 'Wi-Fi', 'Local Area Connection* 12', 'Loopback Pseudo-Interface 1', 'Ethernet']
+2026-09-24 09:14:22,638 - INFO - Starting firewall monitoring on interface: Local Area Connection* 13
+2026-09-24 09:14:22 - INFO - Firewall started successfully
+2026-09-24 09:14:22,639 - INFO - Press Ctrl+C to stop
+2026-09-24 09:14:23 - ERROR - Firewall error: Could not create Windows Firewall rule for 192.168.137.196: 
+2026-09-24 09:14:44,718 - INFO - Available interfaces: ['Local Area Connection* 5', 'Local Area Connection* 4', 'Local Area Connection* 3', 'Wi-Fi', 'Local Area Connection* 13', 'Local Area Connection* 12', 'Loopback Pseudo-Interface 1', 'Ethernet']
+2026-09-24 09:14:44,719 - INFO - Starting firewall monitoring on interface: Local Area Connection* 13
+2026-09-24 09:14:44,720 - INFO - Press Ctrl+C to stop
+2026-09-24 09:14:44 - INFO - Firewall started successfully
+2026-09-24 09:14:45 - ERROR - Firewall error: Could not create Windows Firewall rule for 192.168.137.196: 
+2026-09-24 10:38:31 - INFO - Quick-blocked site: testsite.example
+2026-09-24 10:38:31 - INFO - Added domain: second.example
+2026-09-24 10:38:31 - INFO - Removed domain: second.example
