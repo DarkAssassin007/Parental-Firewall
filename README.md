@@ -1,4 +1,4 @@
-# Home Wi‑Fi Parental Firewall
+#  🛡 Home Wi‑Fi Parental Firewall
 
 A Windows-based parental firewall for home networks that helps protect children from adult websites, inappropriate content, ads, trackers, and other harmful online destinations by filtering traffic from devices connected through the home Wi‑Fi hotspot.
 
