@@ -139,4 +139,4 @@ This project is for authorized, lawful use on networks you own or manage, such a
 
 ## License
 
-This project is provided for educational and personal use. Please review the repository license if one is added later.
+This project is provided for educational and personal use.
